@@ -5,7 +5,41 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <script src="https://use.fontawesome.com/15f55707c0.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous">
+    </script>
+    <script>
+      $(document).ready(function() {
+        $(window).scroll(function(){
+          var top = $(this).scrollTop();
+          // console.log(top);
+          if (top === 0) {
+            $(".nav-container").removeClass('nav-container-scroll');
+            $(".nav-nav-link").css("color", "#f0f0f0")
+            $(".nav-logo").css("background-image","url(http://wideopentech.com/themes/wot-2013-gm/_/img/wot-logo-whitex2.svg)")
 
+          }
+          if (top > 0){
+            $(".nav-container").addClass('nav-container-scroll');
+            $(".nav-nav-link").css("color", "hsl(0, 0%, 60%)")
+            $(".nav-logo").css("background-image","url(http://wideopentech.com/themes/wot-2013-gm/_/img/wot-logo-dark.svg)")
+
+          }
+        });
+        $('.nav-nav-link').hover(function(e) {
+            if ($('.nav-container').hasClass("nav-container-scroll")) {
+              $(this).css("color", "hsl(0, 0%, 30%)")
+            }
+          }, function() {
+            if ($('.nav-container').hasClass("nav-container-scroll")) {
+              $(this).css("color", "hsl(0, 0%, 60%)")
+            }
+        });
+
+      })
+    </script>
     <!--    <link href='--><!--/_/lib/bootstrap/css/bootstrap.min.css' type='text/css' media="all" rel="stylesheet"/>-->
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -26,12 +60,12 @@
           <div class="nav-filler">
           </div>
           <div class="nav-nav">
-              <a href="/services">services</a>
-              <a  href="/company">company</a>
-              <a href="/portfolio">portfolio</a>
-              <a href="/careers">careers</a>
-              <a href="/blog">blog</a>
-              <a href="/contact">contact</a>
+              <a class="nav-nav-link" href="/services">services</a>
+              <a class="nav-nav-link" href="/company">company</a>
+              <a class="nav-nav-link" href="/portfolio">portfolio</a>
+              <a class="nav-nav-link" href="/careers">careers</a>
+              <a class="nav-nav-link" href="/blog">blog</a>
+              <a class="nav-nav-link" href="/contact">contact</a>
           </div>
         </div>
       </div>
